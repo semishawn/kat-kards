@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/kat-kards/favicon.png"/>
+<title>national goof off day</title>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"></script>
+<script src="https://kit.fontawesome.com/5978d27576.js" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>.hide {visibility: hidden;}</style>
+<link rel="stylesheet" href="/kat-kards/css/main.css">
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body class="hide">
+	<div class="play-container">
+		<div class="goofy-pics">
+			<img src="monk.gif">
+			<img src="monk2.gif">
+			<img src="poo.gif">
+		</div>
+		<button class="btn"><i class="fas fa-play"></i>are you ready to goof off?</button>
+	</div>
+
+	<script>
+	if (sessionStorage.getItem('adgangskode') === null) {
+		window.location.href = '/kat-kards/';
+	} else $('body').removeClass('hide');
+</script>
+</body>
+
+</html>

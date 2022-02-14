@@ -1,0 +1,148 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	background: #fbb;
+	overflow: hidden;
+}
+
+.title {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-family: 'Comic Neue', sans-serif;
+	font-size: 35px;
+	font-weight: 700;
+	font-style: italic;
+	color: red;
+}
+
+.capy {
+	--dimension: 200px;
+	position: absolute;
+	top: 30%;
+	width: var(--dimension);
+	animation: nyeoom 4s infinite linear reverse;
+}
+
+.arm {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 65%;
+}
+
+.valentine {
+	--height: 300px;
+	--width: 450px;
+	--card-margin: 20px;
+	--inside-color: #ddd;
+	position: relative;
+	height: var(--height);
+	width: var(--width);
+	cursor: pointer;
+}
+.valentine:hover .heart {transform: scale(1.1);}
+
+.envelope-backing {
+	position: absolute;
+	bottom: 0;
+	height: var(--height);
+	width: 100%;
+	background: var(--inside-color);
+	cursor: pointer;
+}
+
+.tab {
+	position: absolute;
+	top: 0;
+	display: none;
+	width: 100%;
+	border-width: calc(var(--height) / 2) calc(var(--width) / 2);
+	border-top-width: 0;
+	border-style: solid;
+	border-color: transparent;
+	border-bottom-color: var(--inside-color);
+	box-sizing: border-box;
+}
+
+.card {
+	position: absolute;
+	opacity: 0;
+	bottom: var(--card-margin);
+	left: var(--card-margin);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: calc(var(--height) - 2 * var(--card-margin));
+	width: calc(var(--width) - 2 * var(--card-margin));
+	font-family: 'Comic Neue', sans-serif;
+	font-weight: 700;
+	background: #fafaed;
+	transition: transform 1s ease-out;
+	box-sizing: border-box;
+}
+
+p {
+	margin: 0;
+}
+
+.lin {
+	height: 120px;
+	margin: 10px 0;
+}
+
+.envelope-front {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: var(--height);
+	width: 100%;
+	border-width: calc(var(--height) / 2) calc(var(--width) / 2);
+	border-style: solid;
+	border-color: #f7f7f7 #fff;
+	box-sizing: border-box;
+}
+
+.heart {
+	position: absolute;
+	font-size: calc(var(--width) / 6);
+	color: red;
+}
+.fa-heart-broken {display: none;}
+
+.closed {animation: rock 2s infinite steps(2);}
+
+
+
+.open {height: calc(1.5 * var(--height));}
+.open .tab {display: block;}
+.open .card {
+	opacity: 1;
+	transform: translateY(calc(-100% + var(--card-margin)));
+}
+.open .envelope-front {border-top-color: transparent;}
+.open .fa-heart {display: none;}
+.open .fa-heart-broken {display: inline;}
+
+
+
+@keyframes rock {
+	0% {transform: rotate(-3deg);}
+	50% {transform: rotate(3deg);}
+	100% {transform: rotate(-3deg);}
+}
+
+@keyframes nyeoom {
+	from {left: calc(-1 * var(--dimension));}
+	to {left: 100%;}
+}

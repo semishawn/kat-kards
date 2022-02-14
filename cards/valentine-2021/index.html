@@ -1,0 +1,44 @@
+---
+title: "valentine's day 2021"
+---
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% include head.html %}
+	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body class="hide">
+	<span class="title">A message awaits you, my love...</span>
+
+	<img class="capy" src="capy.png">
+	<img class="arm" src="arm.png">
+
+	<div class="valentine closed">
+		<div class="envelope-backing"></div>
+		<div class="tab"></div>
+		<div class="card">
+			<p>Of all the babes in the world,</p>
+			<img class="lin" src="lin.jpg">
+			<p>You're the babiest of all.</p>
+			<p>Happy Valentine's Day</p>
+			<p>Love, Shawn</p>
+		</div>
+		<div class="envelope-front">
+			<i class="heart fas fa-heart"></i>
+			<i class="heart fas fa-heart-broken"></i>
+		</div>
+	</div>
+
+	{% include adgangskode-check.html %}
+	<script>
+		$('.valentine').click(function() {
+			$(this).toggleClass('closed open');
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/kat-kards/favicon.png"/>
+<title>valentine's day 2022</title>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"></script>
+<script src="https://kit.fontawesome.com/5978d27576.js" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>.hide {visibility: hidden;}</style>
+<link rel="stylesheet" href="/kat-kards/css/main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body class="hide">
+	<span class="title">A message for my cherie amour...</span>
+
+	<img class="racc" src="racc.png">
+	<img class="arm" src="arm.png">
+
+	<div class="valentine closed">
+		<div class="envelope-backing"></div>
+		<div class="tab"></div>
+		<div class="card">
+		<pre>
+			My heart loves Kat with an ever-burning <i style="color: orange;">fire</i>,
+			But it also loves to love the <i style="color: darkred">desire</i>,
+			Of seeing Kat laugh,
+			And chart on a graph,
+			Things she's put in my pocket prior.
+
+			Love, Shawn
+		</pre>
+		</div>
+		<div class="envelope-front">
+			<i class="heart fas fa-heart"></i>
+			<i class="heart fas fa-heart-broken"></i>
+		</div>
+	</div>
+
+	<script>
+	if (sessionStorage.getItem('adgangskode') === null) {
+		window.location.href = '/kat-kards/';
+	} else $('body').removeClass('hide');
+</script>
+	<script>
+		$(".valentine").click(function() {
+			$(this).toggleClass("closed open");
+		});
+
+		var preBefore = $("pre").html();
+		var preAfter = preBefore.replaceAll("\t", "");
+		$("pre").html(preAfter);
+	</script>
+</body>
+
+</html>

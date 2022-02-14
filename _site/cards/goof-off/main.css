@@ -1,0 +1,32 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	background: #fee70c;
+}
+
+.play-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.goofy-pics {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 40px;
+}
+.goofy-pics * {
+	--dimension: 200px;
+	height: var(--dimension);
+	width: var(--dimension);
+	margin-left: -30px;
+}

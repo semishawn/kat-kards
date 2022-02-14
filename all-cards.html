@@ -1,0 +1,42 @@
+---
+title: Card List
+cards: [
+	{
+		name: "valentine's day 2021",
+		slug: "valentine-2021"
+	},
+	{
+		name: "valentine's day 2022",
+		slug: "valentine-2022"
+	},
+	{
+		name: "national goof off day",
+		slug: "goof-off"
+	},
+	{
+		name: "kat's 17th birthday",
+		slug: "birthday"
+	}
+]
+---
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% include head.html %}
+	<link rel="stylesheet" href="css/all-cards.css">
+</head>
+
+<body class="hide">
+	{%- for card in page.cards %}
+	<a class="btn" href="cards/{{ card.slug }}">
+		<i class="fas fa-envelope-open-text"></i>
+		{{ card.name }}
+	</a>
+	{%- endfor %}
+
+	{% include adgangskode-check.html %}
+</body>
+
+</html>

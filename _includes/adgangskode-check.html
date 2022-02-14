@@ -1,0 +1,5 @@
+<script>
+	if (sessionStorage.getItem('adgangskode') === null) {
+		window.location.href = '{{ site.baseurl }}/';
+	} else $('body').removeClass('hide');
+</script>

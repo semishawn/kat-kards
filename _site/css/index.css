@@ -1,0 +1,72 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.adgangskode-input-container {
+	--icon-size: 25px;
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+.adgangskode-input-container:before {
+	position: absolute;
+	content: '';
+	height: calc(100% + var(--input-shadow));
+	width: 100%;
+	opacity: 0.2;
+	border-radius: var(--input-radius);
+	transition: all var(--input-duration);
+	pointer-events: none;
+	z-index: 999;
+}
+
+.adgangskode-box {
+	height: var(--input-height);
+	width: 300px;
+	padding-left: var(--input-padding);
+	padding-right: calc(var(--input-padding) + var(--icon-size) + var(--icon-margin));
+	border: 0;
+	border-radius: var(--input-radius);
+	outline: 0;
+	box-shadow: 0 var(--input-shadow) 0 0 var(--primary2);
+	color: black;
+	background: var(--primary1);
+	text-decoration: none;
+	-webkit-appearance: none;
+	transition: all 0.15s;
+	box-sizing: border-box;
+}
+.adgangskode-box::placeholder {color: #888;}
+
+.adgangskode-input-container svg {
+	position: absolute;
+	top: 50%;
+	right: var(--input-padding);
+	font-size: var(--icon-size);
+	transform: translateY(-50%);
+}
+.fa-lock-open {display: none;}
+
+.right {animation: correct var(--input-duration) linear;}
+.right:before {
+	background: #0f0;
+	animation: right-fade var(--input-duration);
+}
+.right .fa-lock {display: none;}
+.right .fa-lock-open {display: inline;}
+
+.wrong {animation: shake var(--input-duration) linear;}
+.wrong:before {
+	background: #f00;
+	animation: right-fade var(--input-duration);
+}
+@keyframes shake {
+	8%, 41% {transform: translateX(-10px);}
+	25%, 58% {transform: translateX(10px);}
+	75% {transform: translateX(-5px);}
+	92% {transform: translateX(5px);}
+	0%, 100% {transform: translateX(0);}
+}

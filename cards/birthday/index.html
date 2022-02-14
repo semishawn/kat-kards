@@ -1,0 +1,43 @@
+---
+title: "kat's 17th birthday"
+---
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% include head.html %}
+	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body class="hide">
+	<div class="us">
+		<img class="hedge" src="hedge.png">
+		<img class="racc" src="racc.png">
+		<i class="heart fas fa-heart"></i>
+	</div>
+
+	<button class="btn kith">
+		make them kith UwU
+	</button>
+
+	<div class="letter-container">
+		<div class="letter">hey its shawn here. i wanted to let you know that ive enjoyed every moment of this past year being your boyfriend. from smooching in the forest to playing mario kart together, every moment i spend with you is incredible. youre everything that i love in this world, and more. happy birthday 🙂.</div>
+	</div>
+
+	{% include adgangskode-check.html %}
+	<script>
+		$('.kith').click(function() {
+			var kiss = 3000;
+			var heart = 1000;
+			$('.hedge, .racc').animate({'margin': '0'}, kiss);
+			$('.heart').delay(kiss).show(heart);
+			setTimeout(function() {
+				$('.letter-container').addClass('show-letter');
+			}, kiss + heart);
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	--input-height: 50px;
+	--input-padding: 20px;
+	--input-radius: 7px;
+	--input-shadow: 6px;
+	--hover-shadow: 3px;
+	--input-duration: 0.5s;
+	--icon-margin: 10px;
+	--primary1: white;
+	--primary2: #eee;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: #00f3;
+	box-sizing: border-box;
+}
+
+* {
+	font-family: 'Balsamiq Sans', sans-serif;
+	font-size: 20px;
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	height: var(--input-height);
+	font-size: 20px;
+	padding: 0 20px;
+	border: 0;
+	border-radius: var(--input-radius);
+	outline: 0;
+	box-shadow: 0 var(--input-shadow) 0 0 var(--primary2);
+	color: black;
+	background: var(--primary1);
+	text-decoration: none;
+	transition: all 0.15s;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+.btn:hover {
+	box-shadow: 0 var(--hover-shadow) 0 0 var(--primary2);
+	transform: translateY(calc(var(--input-shadow) - var(--hover-shadow)));
+}
+.btn:active {
+	box-shadow: 0 0 0 0 var(--primary2);
+	transform: translateY(var(--input-shadow));
+}
+.btn svg {
+	font-size: 24px;
+	margin-right: var(--icon-margin);
+}
+.btn + .btn {margin-top: 15px;}

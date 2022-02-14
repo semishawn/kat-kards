@@ -1,0 +1,48 @@
+---
+title: Kat Kards
+---
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% include head.html %}
+	<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+	<span class="adgangskode-title">what's da password?</span>
+	<div class="adgangskode-input-container">
+		<i class="fas fa-lock"></i>
+		<i class="fas fa-lock-open"></i>
+		<input class="adgangskode-box" type="text" placeholder="put da password here...">
+	</div>
+	<button class="btn">try da password</button>
+
+	<script>
+		$(window).keypress(function(e) {
+			if (e.which == 13) $('.btn').click();
+		});
+		
+		$('.btn').click(function() {
+			var box = $('.adgangskode-input-container')
+			var input = $('.adgangskode-box').val();
+			var adgangskode = 'aW5zdGFudCBwZWEgc291cA==';
+			var duration = parseFloat($('body').css('--input-duration')) * 1000;
+			if (input == window.atob(adgangskode)) {
+				box.addClass('right');
+				setTimeout(function() {
+					window.location.href = 'all-cards';
+				}, duration);
+				sessionStorage.setItem('adgangskode', true);
+			} else {
+				box.addClass('wrong');
+				setTimeout(function() {
+					box.removeClass('wrong');
+				}, duration);
+			}
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+body {
+	--us-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: pink;
+	overflow: hidden;
+}
+
+.us {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.hedge {
+	height: var(--us-height);
+	margin-right: calc(50vw - 1.5 * var(--us-height));
+	transform: rotate(-18deg) translateY(-25%) translateX(5%);
+}
+
+.racc {
+	height: var(--us-height);
+	margin-left: calc(50vw - 1.5 * var(--us-height));
+	transform: translateY(25%);
+}
+
+.kith {
+	margin-top: 100px;
+}
+
+.heart {
+	position: absolute;
+	display: none;
+	font-size: 100px;
+	color: red;
+	transform: rotate(20deg) translateY(-130px) translateX(25px);
+}
+
+.letter-container {
+	position: absolute;
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+	background: #000b;
+	transition: all 1s;
+	pointer-events: none;
+}
+
+.letter {
+	position: absolute;
+	text-align: center;
+	font-size: 30px;
+	line-height: 2;
+	padding: 200px;
+	margin-top: calc(100vh - 200px);
+	color: white;
+	transition: all 10s linear;
+}
+
+.show-letter {opacity: 1;}
+.show-letter .letter {margin: 0;}
