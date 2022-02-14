@@ -4,6 +4,7 @@ html, body {
 }
 
 body {
+	--spacing: 25px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -14,8 +15,8 @@ body {
 
 .title {
 	position: absolute;
-	top: 20px;
-	left: 20px;
+	top: var(--spacing);
+	left: var(--spacing);
 	font-family: 'Comic Neue', sans-serif;
 	font-size: 35px;
 	font-weight: 700;
@@ -23,11 +24,20 @@ body {
 	color: red;
 }
 
+.music-btn {
+	position: absolute;
+	bottom: var(--spacing);
+	left: var(--spacing);
+	font-size: 50px;
+	color: red;
+	cursor: pointer;
+}
+
 .racc {
-	--dimension: 200px;
+	--dimension: 250px;
 	position: absolute;
 	top: 30%;
-	width: var(--dimension);
+	height: var(--dimension);
 	animation: nyeoom 4s infinite linear reverse;
 }
 
@@ -127,7 +137,7 @@ pre, pre * {font-size: 17px !important;}
 .open .tab {display: block;}
 .open .card {
 	opacity: 1;
-	transform: translateY(calc(-100% + var(--card-margin)));
+	transform: translateY(calc(-100% + 2 * var(--card-margin)));
 }
 .open .envelope-front {border-top-color: transparent;}
 .open .fa-heart {display: none;}

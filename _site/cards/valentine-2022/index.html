@@ -22,6 +22,8 @@
 <body class="hide">
 	<span class="title">A message for my cherie amour...</span>
 
+	<i class="music-btn fas fa-circle-play"></i>
+
 	<img class="racc" src="racc.png">
 	<img class="arm" src="arm.png">
 
@@ -51,13 +53,25 @@
 	} else $('body').removeClass('hide');
 </script>
 	<script>
+		var preBefore = $("pre").html();
+		var preAfter = preBefore.replaceAll("\t", "");
+		$("pre").html(preAfter);
+
 		$(".valentine").click(function() {
 			$(this).toggleClass("closed open");
 		});
 
-		var preBefore = $("pre").html();
-		var preAfter = preBefore.replaceAll("\t", "");
-		$("pre").html(preAfter);
+		var song = new Audio("cherie-amour.mp3");
+		$(document).on("click", ".music-btn", function() {
+			if (song.paused == false) song.pause();
+			else song.play();
+
+			$(this).toggleClass("fa-circle-play fa-circle-pause");
+
+			var src = $(".racc").attr("src");
+			var newsrc = (src == "racc.png") ? "stevie.png" : "racc.png";
+			$(".racc").attr("src", newsrc);
+		});
 	</script>
 </body>
 
